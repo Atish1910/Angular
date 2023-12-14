@@ -1,17 +1,19 @@
-function displayFactors(value : number) :number[]
+function maxNumber(Arr : number[]) : number
 {
-    var factors :number[] = [];
-    for (let i = 1; i <= value; i++) 
+    let iMaxCounter : number = 0;
+
+    for (let i = 0; i < Arr.length; i++) 
     {
-        if (value % i === 0 ) 
+        if (Arr[i] > iMaxCounter) 
         {
-            factors.push(i);
+            iMaxCounter = Arr[i];    
         }
-    }
-    return factors;
+        
+    }return iMaxCounter;
+
 }
 
-var NoGivenByUser : number = 20;
-var finalAns :number[] = displayFactors (NoGivenByUser);
+var ArrGivenByUser : number[] = [10,20,30,40];
+var largestNumber : number = maxNumber(ArrGivenByUser);
 
-console.log("Factor of "+NoGivenByUser +finalAns);
+console.log("Maximum No from arra is" +largestNumber);

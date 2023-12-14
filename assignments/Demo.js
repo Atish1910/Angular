@@ -1,12 +1,12 @@
-function displayFactors(value) {
-    var factors = [];
-    for (var i = 1; i <= value; i++) {
-        if (value % i === 0) {
-            factors.push(i);
+function maxNumber(Arr) {
+    var iMaxCounter = 0;
+    for (var i = 0; i < Arr.length; i++) {
+        if (Arr[i] > iMaxCounter) {
+            iMaxCounter = Arr[i];
         }
     }
-    return factors;
+    return iMaxCounter;
 }
-var NoGivenByUser = 20;
-var finalAns = displayFactors(NoGivenByUser);
-console.log("Factor of " + NoGivenByUser + finalAns);
+var ArrGivenByUser = [10, 20, 30, 40];
+var largestNumber = maxNumber(ArrGivenByUser);
+console.log("Maximum No from arra is" + largestNumber);

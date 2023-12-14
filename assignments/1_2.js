@@ -1,8 +1,12 @@
-function circleArea(radius) {
-    var pi = 3.14;
-    var Area = pi * radius * radius;
-    return Area;
+function MaxNumber(ArryOfNumbers) {
+    var iMax = 0;
+    for (var i = 0; i < ArryOfNumbers.length; i++) {
+        if (ArryOfNumbers[i] > iMax) {
+            iMax = ArryOfNumbers[i];
+        }
+    }
+    return iMax;
 }
-var userRadius = 5;
-var calculateArea = circleArea(userRadius);
-console.log("area of given raduis is " + calculateArea);
+var ArrGivenByUser = [10, 33, 52, 102];
+var MaxNo = MaxNumber(ArrGivenByUser);
+console.log("The hoghest no from array is " + MaxNo);

@@ -1,17 +1,29 @@
-function displayFactors(value : number) :number[]
+function findSecondLargest(arr: number[]): number 
 {
-    var factors :number[] = [];
-    for (let i = 1; i <= value; i++) 
+
+    let firstMax: number = 0;
+    let secondMax: number = 0;
+
+    for (let i = 0; i < arr.length; i++) 
     {
-        if (value % i === 0 ) 
+        if (arr[i] > firstMax) 
         {
-            factors.push(i);
+            secondMax = firstMax;
+            firstMax = arr[i];
+        } 
+        else if (arr[i] > secondMax && arr[i] !== firstMax) 
+        {
+            secondMax = arr[i];
         }
     }
-    return factors;
+
+    return secondMax;
 }
 
-var NoGivenByUser : number = 20;
-var finalAns :number[] = displayFactors (NoGivenByUser);
-
-console.log("Factor of "+NoGivenByUser +finalAns);
+// Example usage
+const numbers: number[] = [10, 5, 8, 20, 15];
+try 
+{
+    const secondLargest: number = findSecondLargest(numbers);
+    console.log("The second largest number is: " + secondLargest);
+} 
